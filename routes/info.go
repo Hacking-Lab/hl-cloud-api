@@ -11,6 +11,7 @@ import (
 func GetInfo(w http.ResponseWriter, r *http.Request) {
 	w.Header().Set("Content-Type", "application/json")
 	w.Header().Set("Access-Control-Allow-Origin", "*")
+
 	output, err := json.MarshalIndent(map[string]interface{}{
 		"author": core.Author,
 		"name":   core.Name,
