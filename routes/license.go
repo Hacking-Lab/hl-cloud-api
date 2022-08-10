@@ -3,6 +3,8 @@ package routes
 import (
 	"encoding/json"
 	"net/http"
+
+	"github.com/Hacking-Lab/hl-cloud-api/checkers"
 )
 
 func CheckLicense(w http.ResponseWriter, r *http.Request) {
@@ -23,11 +25,9 @@ func CheckLicense(w http.ResponseWriter, r *http.Request) {
 		return
 	}
 
-	key := keys[0]
-	isValid := true
-	if key != "5P3C1AL-4DM1N15TR4T0R-K3Y" {
-		isValid = false
-	}
+	keyProvided := keys[0]
+	isValid := checkers.Licence(keyProvided)
+
 	output, err := json.MarshalIndent(map[string]bool{
 		"valid": isValid,
 	}, "", "\t")
