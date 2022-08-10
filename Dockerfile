@@ -4,7 +4,7 @@ RUN mkdir /api
 WORKDIR /api
 COPY . .
 
-RUN go build -o main main.go
+RUN go build -o hlcloud-api main.go
 EXPOSE 1337
 
-CMD ["./main"]
+CMD ["./hlcloud-api"]
