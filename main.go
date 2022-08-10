@@ -7,8 +7,8 @@ import (
 )
 
 func main() {
-	http.HandleFunc("/info", routes.GetInfo)
-	http.HandleFunc("/license/check", routes.CheckLicense)
-	http.HandleFunc("/pricing", routes.GetPricing)
+	http.HandleFunc("/info", routes.HandleInfo)
+	http.HandleFunc("/license/check", routes.HandleLicense)
+	http.HandleFunc("/pricing", routes.HandlePricing)
 	http.ListenAndServe(":1337", nil)
 }

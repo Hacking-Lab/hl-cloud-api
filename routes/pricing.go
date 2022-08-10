@@ -5,7 +5,7 @@ import (
 	"net/http"
 )
 
-func GetPricing(w http.ResponseWriter, r *http.Request) {
+func HandlePricing(w http.ResponseWriter, r *http.Request) {
 	w.Header().Set("Content-Type", "application/json")
 	w.Header().Set("Access-Control-Allow-Origin", "*")
 

@@ -8,7 +8,7 @@ import (
 	"github.com/Hacking-Lab/hl-cloud-api/core"
 )
 
-func GetInfo(w http.ResponseWriter, r *http.Request) {
+func HandleInfo(w http.ResponseWriter, r *http.Request) {
 	w.Header().Set("Content-Type", "application/json")
 	w.Header().Set("Access-Control-Allow-Origin", "*")
 

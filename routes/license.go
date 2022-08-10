@@ -7,7 +7,7 @@ import (
 	"github.com/Hacking-Lab/hl-cloud-api/checkers"
 )
 
-func CheckLicense(w http.ResponseWriter, r *http.Request) {
+func HandleLicense(w http.ResponseWriter, r *http.Request) {
 	w.Header().Set("Content-Type", "application/json")
 	w.Header().Set("Access-Control-Allow-Origin", "*")
 
