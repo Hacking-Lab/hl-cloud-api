@@ -15,6 +15,18 @@ func GetPricing(w http.ResponseWriter, r *http.Request) {
 				"montly": "0 CHF",
 				"yearly": "0 CHF",
 			},
+			"basic": map[string]string{
+				"montly": "9.99 CHF",
+				"yearly": "99.99 CHF",
+			},
+			"pro": map[string]string{
+				"montly": "19.99 CHF",
+				"yearly": "199.99 CHF",
+			},
+			"enterprise": map[string]string{
+				"montly": "29.99 CHF",
+				"yearly": "299.99 CHF",
+			},
 		},
 	}, "", "\t")
 	if err == nil {
