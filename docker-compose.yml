@@ -1,0 +1,7 @@
+version: '3.6'
+
+services:
+  backend:
+    build: .
+    ports:
+      - "1337:1337"
