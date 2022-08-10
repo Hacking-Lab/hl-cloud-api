@@ -12,7 +12,7 @@ func HandleInfo(w http.ResponseWriter, r *http.Request) {
 	w.Header().Set("Content-Type", "application/json")
 	w.Header().Set("Access-Control-Allow-Origin", "*")
 
-	output, err := json.MarshalIndent(map[string]interface{}{
+	output, _ := json.Marshal(map[string]interface{}{
 		"author": core.Author,
 		"name":   core.Name,
 		"runtime": map[string]string{
@@ -20,9 +20,7 @@ func HandleInfo(w http.ResponseWriter, r *http.Request) {
 			"version":          runtime.Version(),
 			"operating_system": runtime.GOOS,
 		},
-		"version": core.Version,
-	}, "", "\t")
-	if err == nil {
-		w.Write(output)
-	}
+		"version": "v" + core.Version,
+	})
+	w.Write(output)
 }

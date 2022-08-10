@@ -9,7 +9,7 @@ func HandlePricing(w http.ResponseWriter, r *http.Request) {
 	w.Header().Set("Content-Type", "application/json")
 	w.Header().Set("Access-Control-Allow-Origin", "*")
 
-	output, err := json.MarshalIndent(map[string]interface{}{
+	output, _ := json.Marshal(map[string]interface{}{
 		"plans": map[string]interface{}{
 			"free": map[string]string{
 				"montly": "0 CHF",
@@ -28,8 +28,6 @@ func HandlePricing(w http.ResponseWriter, r *http.Request) {
 				"yearly": "299.99 CHF",
 			},
 		},
-	}, "", "\t")
-	if err == nil {
-		w.Write(output)
-	}
+	})
+	w.Write(output)
 }
